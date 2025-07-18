@@ -139,8 +139,8 @@ def health_check():
     })
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 3001))
-    debug = os.getenv('NODE_ENV', 'development') != 'production'
+    port = int(os.getenv('PORT', 5000))
+    debug = os.getenv('FLASK_ENV') == 'development' or os.getenv('NODE_ENV') == 'development'
     
     print(f"🚀 Server starting on port {port}")
     print(f"📊 Environment: {os.getenv('NODE_ENV', 'development')}")
